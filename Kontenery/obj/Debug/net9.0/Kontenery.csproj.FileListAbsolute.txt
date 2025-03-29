@@ -12,3 +12,4 @@ C:\Users\jtans\Desktop\APBD\Kontenery\Kontenery\obj\Debug\net9.0\refint\Kontener
 C:\Users\jtans\Desktop\APBD\Kontenery\Kontenery\obj\Debug\net9.0\Kontenery.pdb
 C:\Users\jtans\Desktop\APBD\Kontenery\Kontenery\obj\Debug\net9.0\Kontenery.genruntimeconfig.cache
 C:\Users\jtans\Desktop\APBD\Kontenery\Kontenery\obj\Debug\net9.0\ref\Kontenery.dll
+C:\Users\jtans\Desktop\APBD\Kontenery\Kontenery\obj\Debug\net9.0\Kontenery.sourcelink.json

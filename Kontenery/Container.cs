@@ -2,29 +2,36 @@
 
 public class Container {
 
-    public int CargoMass { get; set; }
-    public int Height { get; set; }
-    public int Weight { get; set; }
-    public int Depth { get; set; }
-    public string? SerialNumber { get; set; }
-    public int MaxLoad { get; set; }
+    private static int idCounter = 1;
+    public string SerialNumber { get; }
+    public double CargoWeight { get; protected set; }
+    public double MaxLoad { get; }
+    public double Height { get; }
+    public double Depth { get; }
+    public double OwnWeight { get; }
 
     
-    public Container() {}
-    public Container(int maxLoad) {
+    protected Container(string type, double maxLoad, double height, double depth, double ownWeight)
+    {
+        SerialNumber = $"KON-{type}-{idCounter++}";
         MaxLoad = maxLoad;
+        Height = height;
+        Depth = depth;
+        OwnWeight = ownWeight;
     }
 
 
-    public void UnloadCargo() {
-
+    public virtual void UnloadCargo() {
+        CargoWeight = 0;
     }
 
-    public void LoadCargo(int addedCargoWeight) {
+    public virtual void LoadCargo(double addedCargoWeight) {
 
         if (addedCargoWeight > MaxLoad) {
             throw new OverfillException("added cargo weight is exceeding this container's max load");
         }
+
+        CargoWeight += addedCargoWeight;
 
     }
 
