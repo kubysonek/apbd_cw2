@@ -12,7 +12,7 @@ public class GasContainer : Container, IHazardNotifier
     
     public override void UnloadCargo()
     {
-        CargoWeight *= 0.05; // Zostawiamy 5% ładunku
+        CargoWeight *= 0.05; 
     }
     
     public void NotifyHazard(string message)

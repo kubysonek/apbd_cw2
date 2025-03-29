@@ -10,17 +10,17 @@ class Program {
         GasContainer heliumContainer = new GasContainer(5000, 180, 250, 900, 10);
         
         bananaContainer.LoadCargo(5000);
-        fuelContainer.LoadCargo(4000);
+        fuelContainer.LoadCargo(3000);
         heliumContainer.LoadCargo(2000);
         
-        ship.LoadContainer(bananaContainer);
-        ship.LoadContainer(fuelContainer);
-        ship.LoadContainer(heliumContainer);
+        ship.LoadContainerOnShip(bananaContainer);
+        ship.LoadContainerOnShip(fuelContainer);
+        ship.LoadContainerOnShip(heliumContainer);
         
         Console.WriteLine($"Total container weight: {ship.GetTotalWeight()} kg");
         
-        ship.RemoveContainer(fuelContainer.SerialNumber);
-        Console.WriteLine($"Łączna masa po usunięciu: {ship.GetTotalWeight()} kg");
+        ship.RemoveContainerFromShip(fuelContainer.SerialNumber);
+        Console.WriteLine($"Total container weight: {ship.GetTotalWeight()} kg");
     }
 }
 

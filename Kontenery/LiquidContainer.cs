@@ -11,15 +11,19 @@ public class LiquidContainer : Container, IHazardNotifier{
         IsHazardous = isHazardous;
     }
     
-    public override void LoadCargo(double weight)
+    public override void LoadCargo(double addedCargoWeight)
     {
         double allowedLoad = IsHazardous ? MaxLoad * 0.5 : MaxLoad * 0.9;
-        if (weight > allowedLoad)
+        if (addedCargoWeight > allowedLoad)
         {
-            NotifyHazard("Próba załadowania niebezpiecznej ilości do kontenera!");
-            throw new OverfillException("Przekroczono bezpieczną ładowność kontenera!");
+            NotifyHazard("Added cargo weight is exceeding this container's safe load!");
+            if (addedCargoWeight > MaxLoad) 
+            {
+                throw new OverfillException("Added cargo weight is exceeding this container's safe load!");
+            }
+            
         }
-        base.LoadCargo(weight);
+        base.LoadCargo(addedCargoWeight);
     }
     
     public void NotifyHazard(string message)

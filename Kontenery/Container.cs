@@ -28,11 +28,9 @@ public class Container {
     public virtual void LoadCargo(double addedCargoWeight) {
 
         if (addedCargoWeight > MaxLoad) {
-            throw new OverfillException("added cargo weight is exceeding this container's max load");
+            throw new OverfillException("Added cargo weight is exceeding this container's max load!");
         }
-
         CargoWeight += addedCargoWeight;
-
     }
 
 }
