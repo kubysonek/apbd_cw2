@@ -32,5 +32,10 @@ public class Container {
         }
         CargoWeight += addedCargoWeight;
     }
+    
+    public override string ToString()
+    {
+        return $"{SerialNumber}: Own weigh: {OwnWeight} kg, Cargo: {CargoWeight}/{MaxLoad} kg, Size: {Height}x{Depth} cm";
+    }
 
 }
